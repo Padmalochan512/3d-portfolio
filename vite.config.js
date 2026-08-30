@@ -2,7 +2,8 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/3d-portfolio/',
+  // Netlify serves this site from the domain root.
+  base: '/',
   build: {
     rollupOptions: {
       input: {
@@ -12,4 +13,3 @@ export default defineConfig({
     },
   },
 });
-
