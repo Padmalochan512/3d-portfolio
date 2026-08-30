@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Real-time Visitor Analytics Dashboard for 3D Portfolio." />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>" />
+    <title>Visitor Analytics & Telemetry | 3D Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;600;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/dashboard-DqYUaBWg.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/tracker-DyRNsYzu.js">
+    <link rel="stylesheet" crossorigin href="/assets/dashboard-C5auHlVX.css">
+  </head>
+  <body class="dashboard-body">
+
+    <!-- Cyber Security Login Gate Overlay -->
+    <div id="login-overlay" class="login-overlay">
+      <div class="login-card">
+        <div class="login-badge">
+          <span class="lock-icon">🔐</span>
+          <span>RESTRICTED ACCESS</span>
+        </div>
+        <h2 class="login-title">Admin Authentication</h2>
+        <p class="login-desc">Enter your credentials to access the real-time visitor intelligence console.</p>
+
+        <form id="login-form" class="login-form">
+          <div class="login-group">
+            <label for="admin-user">Username</label>
+            <input type="text" id="admin-user" placeholder="admin" required autocomplete="username" />
+          </div>
+
+          <div class="login-group">
+            <label for="admin-pass">Password</label>
+            <input type="password" id="admin-pass" placeholder="••••••••" required autocomplete="current-password" />
+          </div>
+
+          <div id="login-error" class="login-error"></div>
+
+          <button type="submit" class="btn-login" id="btn-login-submit">
+            <span>Authenticate & Decrypt</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </form>
+
+        <div class="login-hint">
+          <span class="hint-label">Default Credentials:</span>
+          <code>User: <strong>admin</strong> | Pass: <strong>admin</strong></code>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Navigation Header -->
+    <header class="dash-navbar">
+      <div class="dash-brand">
+        <a href="/" class="brand-logo">RIVERS<span class="dot">.</span></a>
+        <span class="brand-badge">ANALYTICS HUB</span>
+      </div>
+
+      <div class="dash-nav-actions">
+        <div class="live-pill">
+          <span class="live-indicator"></span>
+          <span class="live-label">LIVE TELEMETRY STREAM</span>
+        </div>
+        <button id="btn-logout" class="btn-logout" title="Lock and Logout">
+          <span class="icon">🔒</span> Logout
+        </button>
+        <a href="/" class="btn-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Back to 3D Portfolio
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Dashboard Container -->
+    <main class="dash-container">
+
+      <!-- Action Bar & Controls -->
+      <section class="dash-controls">
+        <div class="controls-left">
+          <h1 class="dash-title">Visitor Intelligence</h1>
+          <p class="dash-subtitle">Real-time visitor logs, geographic distribution, device telemetry, and referrer stats.</p>
+        </div>
+        <div class="controls-right">
+          <button id="btn-simulate" class="btn-action btn-cyan">
+            <span class="icon">⚡</span> Simulate Live Visit
+          </button>
+          <button id="btn-export" class="btn-action btn-ghost">
+            <span class="icon">📥</span> Export JSON
+          </button>
+          <button id="btn-reset" class="btn-action btn-ghost danger">
+            <span class="icon">🗑️</span> Reset
+          </button>
+        </div>
+      </section>
+
+      <!-- KPI Summary Cards -->
+      <section class="kpi-grid">
+        <div class="kpi-card" id="kpi-visitors">
+          <div class="kpi-header">
+            <span class="kpi-label">TOTAL VISITORS</span>
+            <span class="kpi-icon">👥</span>
+          </div>
+          <div class="kpi-value" id="val-total-visitors">--</div>
+          <div class="kpi-footer positive">
+            <span class="trend-icon">↑ 24%</span> vs last week
+          </div>
+        </div>
+
+        <div class="kpi-card" id="kpi-live">
+          <div class="kpi-header">
+            <span class="kpi-label">ACTIVE SESSIONS</span>
+            <span class="pulse-dot"></span>
+          </div>
+          <div class="kpi-value highlight-cyan" id="val-live-visitors">--</div>
+          <div class="kpi-footer neutral">
+            <span class="sub-label">Current online users</span>
+          </div>
+        </div>
+
+        <div class="kpi-card" id="kpi-duration">
+          <div class="kpi-header">
+            <span class="kpi-label">AVG. TIME ON SITE</span>
+            <span class="kpi-icon">⏱️</span>
+          </div>
+          <div class="kpi-value" id="val-avg-duration">--</div>
+          <div class="kpi-footer positive">
+            <span class="trend-icon">↑ 18s</span> engagement
+          </div>
+        </div>
+
+        <div class="kpi-card" id="kpi-interactions">
+          <div class="kpi-header">
+            <span class="kpi-label">INTERACTIONS LOGGED</span>
+            <span class="kpi-icon">🎯</span>
+          </div>
+          <div class="kpi-value highlight-violet" id="val-interactions">--</div>
+          <div class="kpi-footer neutral">
+            <span class="sub-label">Clicks, zooms & forms</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Charts Section (Grid) -->
+      <section class="charts-grid">
+        <!-- Traffic Trend Line Chart -->
+        <div class="dash-panel chart-panel">
+          <div class="panel-header">
+            <div class="panel-title-group">
+              <h2 class="panel-title">Visitor Traffic Stream</h2>
+              <span class="panel-badge">Last 24 Hours</span>
+            </div>
+            <div class="chart-legend">
+              <span class="legend-dot cyan"></span> Visitors
+            </div>
+          </div>
+          <div class="canvas-wrapper">
+            <canvas id="chart-traffic"></canvas>
+          </div>
+        </div>
+
+        <!-- Device Breakdown Donut Chart -->
+        <div class="dash-panel chart-panel">
+          <div class="panel-header">
+            <div class="panel-title-group">
+              <h2 class="panel-title">Device Breakdown</h2>
+              <span class="panel-badge">By Client Platform</span>
+            </div>
+          </div>
+          <div class="canvas-wrapper donut-wrapper">
+            <canvas id="chart-devices"></canvas>
+            <div id="device-legend" class="device-legend"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Breakdowns Section (Referrers & Geographies) -->
+      <section class="breakdowns-grid">
+        <!-- Top Referrers -->
+        <div class="dash-panel">
+          <div class="panel-header">
+            <h2 class="panel-title">Top Traffic Sources</h2>
+            <span class="panel-meta">Referrals & Direct</span>
+          </div>
+          <div id="referrers-list" class="bars-list">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- Geographic Origins -->
+        <div class="dash-panel">
+          <div class="panel-header">
+            <h2 class="panel-title">Global Locations</h2>
+            <span class="panel-meta">Visitor Countries & Cities</span>
+          </div>
+          <div id="locations-list" class="locations-list">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Real-time Visitor Activity Log Table -->
+      <section class="dash-panel table-panel">
+        <div class="panel-header table-header-flex">
+          <div class="panel-title-group">
+            <h2 class="panel-title">Real-Time Visitor Activity Stream</h2>
+            <span class="panel-meta" id="table-record-count">Showing latest records</span>
+          </div>
+          <div class="table-search-box">
+            <input type="text" id="visitor-search" placeholder="Filter by country, browser, or source..." />
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="visitors-table">
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Visitor ID</th>
+                <th>Location</th>
+                <th>Device & OS</th>
+                <th>Browser</th>
+                <th>Screen</th>
+                <th>Referrer Source</th>
+                <th>Time / Duration</th>
+              </tr>
+            </thead>
+            <tbody id="visitors-table-body">
+              <!-- Populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Notification Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+  </body>
+</html>

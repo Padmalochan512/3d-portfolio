@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Alex Rivers - Interactive 3D Developer Portfolio. Specializing in WebGL, Three.js, and immersive front-end interfaces." />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>" />
+    <title>Alex Rivers | 3D Interactive Developer & Creative Engineer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/main-CLnFE0UC.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/tracker-DyRNsYzu.js">
+    <link rel="stylesheet" crossorigin href="/assets/main-DCYbJsoI.css">
+  </head>
+  <body>
+    <!-- Background Canvas for Three.js WebGL Scene -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Custom Inertia Cursor -->
+    <div id="custom-cursor"></div>
+    <div id="custom-cursor-ring"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+      <div class="logo">
+        <a href="#hero">RIVERS<span class="dot">.</span></a>
+      </div>
+      <nav class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a href="/dashboard.html" class="nav-btn-analytics">
+          <span class="btn-icon">📊</span>
+          <span>Analytics</span>
+        </a>
+        <div class="header-status">
+          <span class="status-indicator"></span>
+          <span class="status-text">Available for Work</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="content-wrapper">
+      
+      <!-- HERO SECTION -->
+      <section id="hero" class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="greet">CREATING DIGITAL</span><br />
+            <span class="highlight">DIMENSIONS</span>
+          </h1>
+          <p class="hero-subtitle">
+            I am a <span class="typing-text" id="typing-text"></span>
+          </p>
+          <div class="cta-group">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <span class="scroll-mouse">
+            <span class="scroll-wheel"></span>
+          </span>
+          <span class="scroll-label">Scroll to Explore</span>
+        </div>
+      </section>
+
+      <!-- ABOUT & SKILLS SECTION -->
+      <section id="about" class="about-section">
+        <div class="section-header">
+          <span class="section-tag">01 / CONCEPT</span>
+          <h2 class="section-title">About Me</h2>
+        </div>
+        
+        <div class="about-grid">
+          <div class="about-card intro-card">
+            <h3>Philosophy</h3>
+            <p>
+              I bridge the gap between imagination and execution. By merging advanced 3D shaders, physics engines, and meticulous front-end details, I build digital spaces that are tactile, organic, and memorable.
+            </p>
+            <p>
+              My goal is to push the boundaries of WebGL, transforming flat web layouts into interactive journeys. Let's build the future together.
+            </p>
+          </div>
+          
+          <div class="about-card skills-card">
+            <h3>Tech Stack & Skills</h3>
+            <div class="skills-grid">
+              <div class="skill-category">
+                <h4>Creative / 3D</h4>
+                <div class="tags">
+                  <span class="tag">Three.js</span>
+                  <span class="tag">WebGL</span>
+                  <span class="tag">GLSL / Shaders</span>
+                  <span class="tag">Blender</span>
+                  <span class="tag">GSAP</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <h4>Engineering</h4>
+                <div class="tags">
+                  <span class="tag">JavaScript (ES6+)</span>
+                  <span class="tag">HTML5 / Canvas</span>
+                  <span class="tag">Vanilla CSS / SCSS</span>
+                  <span class="tag">Vite / Rollup</span>
+                  <span class="tag">Git & CI/CD</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS GALLERY SECTION -->
+      <section id="projects" class="projects-section">
+        <div class="section-header">
+          <span class="section-tag">02 / ARCHIVE</span>
+          <h2 class="section-title">Selected Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card" data-project="nebula">
+            <div class="project-media">
+              <div class="project-overlay"></div>
+              <!-- A beautiful CSS abstract graphic is displayed here, overlayed with glow -->
+              <div class="project-graphic p-1"></div>
+            </div>
+            <div class="project-info">
+              <span class="project-category">WebGL / Fluid Dynamics</span>
+              <h3 class="project-title">Cosmic Nebula Engine</h3>
+              <p class="project-desc">
+                An interactive real-time particles simulation of gas clusters responding to gravitational pull and mouse dragging.
+              </p>
+              <div class="project-tags">
+                <span class="mini-tag">Three.js</span>
+                <span class="mini-tag">GLSL</span>
+                <span class="mini-tag">Math</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card" data-project="quantum">
+            <div class="project-media">
+              <div class="project-overlay"></div>
+              <div class="project-graphic p-2"></div>
+            </div>
+            <div class="project-info">
+              <span class="project-category">Interactive Dashboard</span>
+              <h3 class="project-title">Quantum Sandbox</h3>
+              <p class="project-desc">
+                A mathematical interface plotting multidimensional nodes and dynamic vectors with customized canvas layouts.
+              </p>
+              <div class="project-tags">
+                <span class="mini-tag">Canvas2D</span>
+                <span class="mini-tag">Vite</span>
+                <span class="mini-tag">CSS Grid</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card" data-project="cyber">
+            <div class="project-media">
+              <div class="project-overlay"></div>
+              <div class="project-graphic p-3"></div>
+            </div>
+            <div class="project-info">
+              <span class="project-category">3D Physics Simulation</span>
+              <h3 class="project-title">Cybernetic Ring</h3>
+              <p class="project-desc">
+                Interactive rotating rings made of hard metallic geometry reflecting real-time environment mapping and refractions.
+              </p>
+              <div class="project-tags">
+                <span class="mini-tag">Three.js</span>
+                <span class="mini-tag">Orbit</span>
+                <span class="mini-tag">Physics</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="contact-section">
+        <div class="section-header">
+          <span class="section-tag">03 / COLLABORATION</span>
+          <h2 class="section-title">Start A Project</h2>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-info-card">
+            <h3>Let's create something extraordinary.</h3>
+            <p>
+              Whether you are looking to build a premium 3D site, a custom WebGL simulation, or have questions about development: reach out!
+            </p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <span class="icon">✉️</span>
+                <span class="text">hello@alexrivers.dev</span>
+              </div>
+              <div class="contact-item">
+                <span class="icon">📍</span>
+                <span class="text">San Francisco, CA / Remote</span>
+              </div>
+            </div>
+          </div>
+
+          <form id="contact-form" class="contact-form">
+            <div class="form-group">
+              <input type="text" id="name" name="name" required placeholder=" " />
+              <label for="name">Your Name</label>
+              <span class="bar"></span>
+            </div>
+            
+            <div class="form-group">
+              <input type="email" id="email" name="email" required placeholder=" " />
+              <label for="email">Email Address</label>
+              <span class="bar"></span>
+            </div>
+
+            <div class="form-group">
+              <textarea id="message" name="message" required rows="4" placeholder=" "></textarea>
+              <label for="message">Project Description</label>
+              <span class="bar"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary submit-btn">
+              <span>Send Message</span>
+              <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="form-feedback" id="form-feedback"></div>
+          </form>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="main-footer">
+        <p>&copy; 2026 Alex Rivers. Built with Three.js & Vanilla CSS.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">Github</a>
+          <a href="#" class="social-link">LinkedIn</a>
+          <a href="#" class="social-link">Twitter</a>
+        </div>
+      </footer>
+    </main>
+
+  </body>
+</html>
