@@ -211,7 +211,7 @@ export function trackInteraction(eventType, details = '') {
   const target = visits.find(v => v.id === visitorId);
   if (target) {
     target.interactionCount = (target.interactionCount || 0) + 1;
-    saveVisits(currentVisits);
+    saveVisits(visits);
   }
 }
 
